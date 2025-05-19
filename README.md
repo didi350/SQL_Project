@@ -6,7 +6,7 @@ There are several questions answered, each using a different set of SQL clauses.
 
 The projects were created using PostgreSQL and pgAdmin4.
 
-The reporitory contains the project code, as well as code for loading the database, which can be used to check the results.
+The repository contains the project code, as well as code for loading the database, which can be used to check the results.
 
 The code to load the database was licenced by Copyright (c) Devrim Gündüz <https://www.gunduz.org/>.
 
