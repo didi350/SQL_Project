@@ -15,15 +15,15 @@ CASE
 FROM film
 GROUP BY cost_category
 ORDER BY Count(*) DESC
-
-------------------------------------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------------------------
 
 -- Question 2: Join & Concatenate
 
-/* Create an overview of the actors' first and last names and in how many movies they appear in. Which actor is part of most movies?
-A: The actor that shows up on top of the list changes, Susan or Gina, depending whether we group actors just by name, or by name and ID as well.
-The capitalizing names code was taken from this URL: www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql/. */
+/* Create an overview of the actors' first and last names and in how many movies they appear in. 
+Which actor is part of most movies?
+A: The actor that shows up on top of the list changes, Susan or Gina, depending whether we group actors just by name, 
+or by name and ID as well. The capitalizing names code was taken from the following URL: 
+https://www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql/. */
 
 -- Solution 1: Grouping just by name
 SELECT 
@@ -45,16 +45,17 @@ INNER JOIN film_actor fa
      ON a.actor_id = fa.actor_id
 GROUP BY name, a.actor_id
 ORDER BY number_movies DESC
+-------------------------------------------------------------------------------------------------------------
 
--- Extra: Finding Susan
-/* E.g. Susan Davis shows up twice, with IDs 101 and 110. 
-One of the IDs could be a mistake, especially since it has the same digits reordered, making it easy to mistype.
-But it could also be a different person. 
-The best way to confirm would be to reach out to the source/collector of the data. 
-In the absence of that possibility, the data is grouped in 2 different ways, as demonstrated above.
-When querying the 2 different solutions, it can be noticed that Susan shows up at the top of the list when treated as the same person, but not when treated separately.
-*/
--- Code to find Susan
+-- Bonus insight: Finding Susan
+
+/* E.g. Susan Davis shows up twice, with IDs 101 and 110. One of the IDs could be a mistake, especially given it 
+has the same digits reordered, making it easy to mistype. But it could also be an entirely different person. 
+The best way to confirm would be to reach out to the source/collector of the data. In the absence of that possibility, 
+the data is grouped in 2 different ways, as demonstrated previously. 
+When querying the 2 different solutions, you might notice that Susan shows up at the top of the list when treated as 
+the same person, but not when treated separately. */
+
 SELECT
      a.actor_id, 
      first_name || ' ' || last_name as name,
@@ -65,9 +66,7 @@ INNER JOIN film_actor fa
 WHERE first_name || ' ' || last_name ILIKE 'Susan Davis'
 GROUP BY a.actor_id, name
 ORDER BY number_movies DESC
-
--------------------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------------------------
 
 -- Question 3: Multiple Joins
 
