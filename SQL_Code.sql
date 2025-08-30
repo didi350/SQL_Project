@@ -1,6 +1,5 @@
 -- Question 1: Case When
-/* 
-Write a query that gives an overview of how many films have replacement costs in the following cost ranges:
+/* Write a query that gives an overview of how many films have replacement costs in the following cost ranges:
 i)   low: 9.99 - 19.99
 ii)  medium: 20.00 - 24.99
 iii) high: 25.00 - 29.99
