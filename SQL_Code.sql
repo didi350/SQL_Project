@@ -1,5 +1,3 @@
--------------------------------------------------------------------------------------------
-
 -- Question 1: Case When
 
 /* Write a query that gives an overview of how many films have replacements costs in the following cost ranges:
