@@ -1,9 +1,9 @@
 -- Question 1: Case When
+
 /* Write a query that gives an overview of how many films have replacement costs in the following cost ranges:
 i)   low: 9.99 - 19.99
 ii)  medium: 20.00 - 24.99
-iii) high: 25.00 - 29.99
-*/
+iii) high: 25.00 - 29.99 */
 
 SELECT 
 COUNT(*),
@@ -16,15 +16,14 @@ FROM film
 GROUP BY cost_category
 ORDER BY Count(*) DESC
 
--------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
 
 -- Question 2: Join & Concatenate
 
-/* Create an overview of the actors' first and last names and in how many movies they appear in. 
-Which actor is part of most movies?
--> The actor that shows up on top of the list changes, depending whether we group actors just by name, or by name and ID as well. 
-*/
+/* Create an overview of the actors' first and last names and in how many movies they appear in. Which actor is part of most movies?
+A: The actor that shows up on top of the list changes, Susan or Gina, depending whether we group actors just by name, or by name and ID as well.
+The capitalizing names code was taken from this URL: www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql/. */
 
 -- Solution 1: Grouping just by name
 SELECT 
