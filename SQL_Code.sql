@@ -50,7 +50,7 @@ ORDER BY number_movies DESC
 -- Bonus: Finding Susan
 
 /* E.g. Susan Davis shows up twice, with IDs 101 and 110. One of the IDs could be a mistake, especially given it has 
-the same digits reordered, making it easy to mistype. But it could also be an entirely different person. 
+the same digits reordered, which migth imply mistyping. But it could also be an entirely different person. 
 The best way to confirm would be to reach out to the source/collector of the data. In the absence of that possibility, 
 the data is grouped in 2 different ways, as demonstrated previously. 
 When querying the 2 different solutions, you might notice that Susan shows up at the top of the list when treated as 
