@@ -1,9 +1,9 @@
 -- Question 1: Case When
 
 /* Write a query that gives an overview of how many films have replacement costs in the following cost ranges:
-i)   low: 9.99 - 19.99
-ii)  medium: 20.00 - 24.99
-iii) high: 25.00 - 29.99 */
+i)   low: 9.99 - 19.99 -> 514
+ii)  medium: 20.00 - 24.99 -> 250
+iii) high: 25.00 - 29.99 -> 236 */
 
 SELECT 
 COUNT(*),
@@ -21,9 +21,9 @@ ORDER BY Count(*) DESC
 
 /* Create an overview of the actors' first and last names and in how many movies they appear in. 
 Which actor is part of most movies?
-A: The actor that shows up on top of the list changes, Susan or Gina, depending whether we group actors just by name, 
-or by name and ID as well. The capitalizing names code was taken from the following URL: 
-[link](https://www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql). */
+-> The actor that shows up on top of the list changes, Susan Davis or Gina Degeneres, depending whether we group 
+actors just by name, or by name and ID as well. The code for capitalizing names was taken from the following source:
+https://www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql. */
 
 -- Solution 1: Grouping just by name
 SELECT 
@@ -71,7 +71,8 @@ ORDER BY number_movies DESC
 -- Question 3: Multiple Joins
 
 /* Create an overview of the revenue grouped by a column in the format "country, city". 
-Which "country, city" has the least sales? */
+Which "country, city" has the least sales?
+-> The answer is United States, Tallahassee. */
 
 SELECT
      country || ', ' || city as country_city,
@@ -88,15 +89,12 @@ INNER JOIN payment p
 GROUP BY country_city
 ORDER BY revenue ASC
 LIMIT 5
-
--------------------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------------------------------------
 
 -- Question 4: Uncorrelated Subquery & Extract
 
 /* Create a query that shows average daily revenue by the day of the week. 
-What is the average daily revenue of all Sundays?
-*/
+What is the average daily revenue of all Sundays? */
 
 SELECT
      EXTRACT(ISODoW from date) as day_of_week,
