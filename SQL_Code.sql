@@ -23,7 +23,7 @@ ORDER BY Count(*) DESC
 Which actor is part of most movies?
 A: The actor that shows up on top of the list changes, Susan or Gina, depending whether we group actors just by name, 
 or by name and ID as well. The capitalizing names code was taken from the following URL: 
-https://www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql/. */
+[link](https://www.geeksforgeeks.org/sql/how-to-capitalize-first-letter-in-sql). */
 
 -- Solution 1: Grouping just by name
 SELECT 
@@ -71,8 +71,7 @@ ORDER BY number_movies DESC
 -- Question 3: Multiple Joins
 
 /* Create an overview of the revenue grouped by a column in the format "country, city". 
-Which "country, city" has the least sales?
-*/
+Which "country, city" has the least sales? */
 
 SELECT
      country || ', ' || city as country_city,
