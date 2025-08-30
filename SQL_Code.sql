@@ -47,7 +47,7 @@ GROUP BY name, a.actor_id
 ORDER BY number_movies DESC
 -------------------------------------------------------------------------------------------------------------
 
--- Bonus insight: Finding Susan
+-- Bonus: Finding Susan insight
 
 /* E.g. Susan Davis shows up twice, with IDs 101 and 110. One of the IDs could be a mistake, especially given it 
 has the same digits reordered, making it easy to mistype. But it could also be an entirely different person. 
@@ -91,10 +91,24 @@ ORDER BY revenue ASC
 LIMIT 5
 -------------------------------------------------------------------------------------------------------------
 
+-- Bonus: Why use Left and Inner Joins?
+
+/* With the customer table, Left joins are used because we want to keep all customers, but we don't need all addresses, 
+cities and countries - including those not related to any customer. Regarding the payment table, it should ideally 
+be joined with an Inner or Right join (given the ordering), even though Full join will give the same results in this 
+case. This could be because it would be odd to have payments not related to any customer, as payments must be made by 
+somebody. The opposite, having customers not related to a payment, could be considered odd too, but it’s not impossible. 
+The company could categorize as a customer someone who uses the service/product but doesn't necessarily pay, e.g. 
+multiple users of a Netflix account. Or it could have customers who are invoiced, but haven't paid yet.
+Since we're interested in the revenue, we care more about including all the payments and not necessarily including 
+all of the customers, hence the Inner (or Right) join. */
+-------------------------------------------------------------------------------------------------------------
+
 -- Question 4: Uncorrelated Subquery & Extract
 
 /* Create a query that shows average daily revenue by the day of the week. 
-What is the average daily revenue of all Sundays? */
+What is the average daily revenue of all Sundays?
+-> The answer is $1,410.65. */
 
 SELECT
      EXTRACT(ISODoW from date) as day_of_week,
@@ -109,7 +123,6 @@ GROUP BY day_of_week
 ORDER BY 1 DESC
 
 -- Notes
--- We need to use "Date(payment_date)" bc the "payment_date" includes timezones and groups by timezones.
--- "total_per_day" is the sum for the "Date(payment_date)", aka not yet by weekday.
-
--------------------------------------------------------------------------------------------
+/* We need to use "Date(payment_date)" because the "payment_date" includes timezones and groups by timezones.
+"total_per_day" is the sum for the "Date(payment_date)", aka not yet by weekday. */
+-------------------------------------------------------------------------------------------------------------
