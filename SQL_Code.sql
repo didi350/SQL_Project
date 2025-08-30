@@ -1,9 +1,9 @@
 -- Question 1: Case When
 
 /* Write a query that gives an overview of how many films have replacement costs in the following cost ranges:
-i)   low: 9.99 - 19.99 -> 514
-ii)  medium: 20.00 - 24.99 -> 250
-iii) high: 25.00 - 29.99 -> 236 */
+i)   low: 9.99 - 19.99 (the answer is 514)
+ii)  medium: 20.00 - 24.99 (the answer is 250)
+iii) high: 25.00 - 29.99 (the answer is 236) */
 
 SELECT 
 COUNT(*),
